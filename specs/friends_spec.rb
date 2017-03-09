@@ -106,10 +106,16 @@ class TestFriends < MiniTest::Test
     assert_equal(expected_result, actual_result)
   end
   # 5. Find the total of everyone's money
-
+  def test_find_total
+    expected_result = 143
+    actual_result = total_money(@people)
+    assert_equal(expected_result, actual_result)
+    
+  end
 
   # 6. For two given people, allow the first person to loan a given value of money to the other
-
+    expected_result =
+    actual_result = ()
 
   # 7. Find the set of everyone's favourite food joined together
 
