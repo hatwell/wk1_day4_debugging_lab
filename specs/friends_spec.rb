@@ -141,7 +141,7 @@ class TestFriends < MiniTest::Test
   # Find the people who have the same favourite tv show
   def test_same_tv_show
     expected_result = ["Val", "Keith"]
-    actual_result = same_tv_show(@people)
+    actual_result = same_tv_show(@people, "Pokemon")
     assert_equal(expected_result, actual_result)
   end
 

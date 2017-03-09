@@ -58,10 +58,12 @@ def no_friends(people)
   return lonely_people
 end
 
-def same_tv_show(people)
-  tv_shows = []
+def same_tv_show(people, show)
+  tv_show_likers = []
   for person in people
-    tv_shows.push(person[:favourites][:tv_show])
+    if person[:favourites][:tv_show] == show
+      tv_show_likers.push(person[:name])
+    end
   end
-  return tv_shows
+  return tv_show_likers
 end
