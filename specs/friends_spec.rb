@@ -113,18 +113,37 @@ class TestFriends < MiniTest::Test
   end
 
 
-
   # 6. For two given people, allow the first person to loan a given value of money to the other
-    # expected_result =
-    # actual_result = ()
+    def test_loan_function_returns_string
+      expected_result = "After lending 5, Val has 15 monies and Jay has 7 monies."
+      actual_result = loan_money(@person3, @person2, 5)
+      assert_equal(expected_result, actual_result)
+    end
+
+
 
   # 7. Find the set of everyone's favourite food joined together
-
+  def test_list_of_foods
+    expected_result = ["charcuterie", "soup", "bread", "ratatouille", "stew", "spaghetti", "spinach"]
+    actual_result = list_foods(@people)
+    assert_equal(expected_result, actual_result)
+  end
 
   # 8. Find people with no friends
 
+  def test_no_friends
+    expected_result = ["Dave"]
+    actual_result = no_friends(@people)
+    assert_equal(expected_result, actual_result)
+  end
 
   # VERY tough
   # Find the people who have the same favourite tv show
+  def test_same_tv_show
+    expected_result = ["Val", "Keith"]
+    actual_result = same_tv_show(@people)
+    assert_equal(expected_result, actual_result)
+  end
+
 
 end
