@@ -101,8 +101,9 @@ class TestFriends < MiniTest::Test
   # 4. Allow a friend to be removed from a given person
 
   def test_remove_friend
-    expected_result = @person1[:friends].length() -1
+    expected_result = @person4[:friends].length() -1
     actual_result = remove_friend(@person4, "Jay")
+    assert_equal(expected_result, actual_result)
   end
   # 5. Find the total of everyone's money
 
