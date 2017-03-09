@@ -1,4 +1,5 @@
 require( 'minitest/autorun' )
+require( 'minitest/rg')
 require_relative( '../friends' )
 
 class TestFriends < MiniTest::Test
@@ -13,9 +14,9 @@ class TestFriends < MiniTest::Test
       favourites: {
         tv_show: "Friends",
         things_to_eat: ["charcuterie"]
-      } 
+      }
     }
-    
+
     @person2 = {
       name: "Jay",
       age: 15,
@@ -24,7 +25,7 @@ class TestFriends < MiniTest::Test
       favourites: {
         tv_show: "Baywatch",
         things_to_eat: ["soup","bread"]
-      } 
+      }
     }
 
     @person3 = {
@@ -35,7 +36,7 @@ class TestFriends < MiniTest::Test
       favourites: {
         tv_show: "Pokemon",
         things_to_eat: ["ratatouille", "stew"]
-      } 
+      }
     }
 
     @person4 = {
@@ -46,7 +47,7 @@ class TestFriends < MiniTest::Test
       favourites: {
         tv_show: "Pokemon",
         things_to_eat: ["spaghetti"]
-      } 
+      }
     }
 
     @person5 = {
@@ -57,7 +58,7 @@ class TestFriends < MiniTest::Test
       favourites: {
         tv_show: "Scrubs",
         things_to_eat: ["spinach"]
-      } 
+      }
     }
 
     @people = [@person1, @person2, @person3, @person4, @person5]
@@ -70,7 +71,14 @@ class TestFriends < MiniTest::Test
   end
 
   # 1. For a given person, return their favourite tv show
-
+  def test_getting_tv_show
+    expected_result = "Baywatch"
+    actual_result = get_tv_show(@person2)
+    assert_equal(expected_result, actual_result)
+    expected_result2 = "Scrubs"
+    actual_result2 = get_tv_show(@person5)
+    assert_equal(expected_result2, actual_result2)
+  end
 
   # 2. For a given person, check if they like a particular food
 
