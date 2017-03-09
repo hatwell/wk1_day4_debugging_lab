@@ -81,14 +81,29 @@ class TestFriends < MiniTest::Test
   end
 
   # 2. For a given person, check if they like a particular food
+  def test_do_they_like_the_food
+    expected_result =  true
+    actual_result = food_check(@person1, "charcuterie")
+    expected_result2 = false
+    actual_result2 = food_check(@person2, "seitan")
 
+    assert_equal(expected_result, actual_result)
+    assert_equal(expected_result2, actual_result2)
+  end
 
   # 3. Allow a new friend to be added to a given person
-
+  def test_add_friend
+    expected_result = @person2[:friends].length() + 1
+    actual_result = add_friend(@person2, "Øl")
+    assert_equal(expected_result, actual_result)
+  end
 
   # 4. Allow a friend to be removed from a given person
 
-
+  def test_remove_friend
+    expected_result = @person1[:friends].length() -1
+    actual_result = remove_friend(@person4, "Jay")
+  end
   # 5. Find the total of everyone's money
 
 
